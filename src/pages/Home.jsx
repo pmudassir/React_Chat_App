@@ -1,11 +1,12 @@
 import { Facebook, LinkedIn, Twitter } from '@mui/icons-material'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { mobile } from '../responsive'
 
-const NavbarContainer = styled.div``
+const HomeContainer = styled.div``
 
-const NavbarStyle = styled.div`
+const HomeStyle = styled.div`
     width: 100%;
     height: 200px;
     background-color: lightgray;
@@ -75,6 +76,7 @@ const WidgetButton = styled.button`
     border: none;
     width: 300px;
     margin-top: 10px;
+    cursor: pointer;
 `
 
 const SocialIconContainer = styled.div`
@@ -89,11 +91,11 @@ const SocialICons = styled.div`
     margin: 0px 8px;
 `
 
-const Navbar = () => {
+const Home = () => {
     return (
-        <NavbarContainer>
-            <NavbarStyle>
-                <Logo src='https://i.ibb.co/5YN187W/png-transparent-computer-icons-online-chat-chat-cloud-orange-online-chat-avatar-removebg-preview.png' />
+        <HomeContainer>
+            <HomeStyle>
+                <Logo src='' />
                 <Status />
                 <TitleContainer>
                     <Title>ChatBot Support</Title>
@@ -104,7 +106,9 @@ const Navbar = () => {
                         Hello! I'm a ChatBot. {<br></br>}
                         Ask me anything!
                     </WidgetText>
-                    <WidgetButton>Start Chat</WidgetButton>
+                    <Link to="/chat">
+                        <WidgetButton>Start Chat</WidgetButton>
+                    </Link>
                     <SocialIconContainer>
                         <SocialICons>
                             <Facebook />
@@ -117,9 +121,9 @@ const Navbar = () => {
                         </SocialICons>
                     </SocialIconContainer>
                 </Widget>
-            </NavbarStyle>
-        </NavbarContainer>
+            </HomeStyle>
+        </HomeContainer>
     )
 }
 
-export default Navbar
+export default Home
