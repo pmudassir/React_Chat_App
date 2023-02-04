@@ -34,6 +34,8 @@ const BodyContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    ${'' /* New */}
+    flex: 1;
 `
 
 const UserMessageContainer = styled.div`
@@ -56,13 +58,28 @@ const BotMessageContainer = styled.div`
     border-radius: 25px;
 `
 
+const InputContainer = styled.div``
+
+const Input = styled.input`
+    width: 550px;
+    padding: 10px;
+    border: none;
+`
+
+const Button = styled.button`
+    border: none;
+    padding: 10px;
+    color: white;
+    background-color: blue;
+`
+
 const Chat = () => {
     return (
         <ChatContainer>
             <HeaderContainer>
                 <HeaderImage src='https://helplama.com/wp-content/uploads/2020/07/logo_16424_hd.jpg' />
                 <HeaderText>
-                    <Header>ChatBot Support</Header>1
+                    <Header>ChatBot Support</Header>
                     <Status>Online</Status>
                 </HeaderText>
             </HeaderContainer>
@@ -70,6 +87,10 @@ const Chat = () => {
                 <UserMessageContainer>Hi</UserMessageContainer>
                 <BotMessageContainer>Bot</BotMessageContainer>
             </BodyContainer>
+            <InputContainer>
+                <Input />
+                <Button>Send</Button>
+            </InputContainer>
         </ChatContainer>
     )
 }
